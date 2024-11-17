@@ -12,16 +12,16 @@ function Footer() {
 					<div className='footer-links'>
 						<div className='footer-about-us'>
 							<h3>About us</h3>
-							<a href=''>who are we</a>
+							<a href='/about-us'>who are we</a>
 						</div>
 						<div className='footer-buisness'>
 							<h3>Buisness</h3>
-							<a href=''>Contact Us</a>
-							<a href=''>Onboarding Form</a>
+							<a href='/contact-us'>Contact Us</a>
+							<a href='/brand-onboarding'>Onboarding Form</a>
 						</div>
 						<div className='footer-policy'>
 							<h3>Policies</h3>
-							<a href=''>privacy policy</a>
+							<a href='/privacy-policy'>privacy policy</a>
 						</div>
 					</div>
 				</div>
@@ -34,17 +34,26 @@ function Footer() {
 						</div>
 						<div className='our-deets-right'>
 							<div className='footer-icons'>
-								<div
+								<a
+									href='https://www.linkedin.com/company/getkandidd/posts/?feedView=all'
 									className='footer-icon-linkedin'
 									alt=''
 								/>
-								<div
+								<a
+									href='https://www.instagram.com/kandid.me/'
 									className='footer-icon-insta'
 									alt=''
 								/>
 							</div>
 							<div>
-								<h4>+91 9305709846</h4>
+								<h4>
+									<a
+										className='no'
+										href='wa.me/+919305709846'
+									>
+										+91 9305709846
+									</a>
+								</h4>
 							</div>
 							<div>
 								<h4>

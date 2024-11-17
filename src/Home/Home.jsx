@@ -1,8 +1,8 @@
-import Navbar from '../Components/Navbar';
 import ScrollText from '../Components/ScrollText';
 import Footer from '../Components/Footer';
 import AppUiKan60 from './kan60';
 import AppUiKanTry from './kanTry';
+import { motion } from 'framer-motion';
 
 function Home() {
 	return (
@@ -117,9 +117,13 @@ function Home() {
 			</section>
 
 			<section className='lp-sign-up'>
-				<a href='/sign-up'>
-					<h1>sign up noww!!</h1>
-				</a>
+				<h1>
+					<a href='/sign-up'>
+						sign up noww <span>!</span>
+						<span>!</span>
+					</a>
+				</h1>
+
 				<h4>Karke dekho...accha lagta hai</h4>
 			</section>
 
@@ -135,9 +139,10 @@ function Home() {
 						<h2>Samriddh Verma</h2>
 						<h3>
 							I am the socially awkward CTO keeping kandid's tech game lit af.
-							From backend grit to frontend glow, I've got every click, swipe
-							and scroll under control
+							Be it the backend grit to frontend glow, I got them clicks, swipes
+							and scrolls under my control.
 						</h3>
+						<a href='https://www.linkedin.com/in/samriddh-verma/'></a>
 					</div>
 					<div className='kandisquad'>
 						<img
@@ -150,6 +155,7 @@ function Home() {
 							hustle to keep kandid top tier. No fluff, no playing around just
 							bold decisions with CEO's crown!
 						</h3>
+						<a href='https://www.linkedin.com/in/keshav-agarwal-47a287238/'></a>
 					</div>
 					<div className='kandisquad'>
 						<img
@@ -158,10 +164,11 @@ function Home() {
 						/>
 						<h2>Bhramari Verma</h2>
 						<h3>
-							Prachar vibhag hamara hai CMO cum vibe-curator ensuring you're
-							always in loop with Kandid. Hard-core hype ho ya Viral Trend,
-							Kandid's gonna bless your feed with a perfect blend!
+							Prachar vibhag hamara hai <br /> CMO cum vibe-curator ensuring
+							you're always in loop with Kandid. Hard-core hype ho ya Viral
+							Trend, Kandid's gonna bless your feed with a perfect blend!
 						</h3>
+						<a href='https://www.linkedin.com/in/bhramari/'></a>
 					</div>
 				</div>
 			</section>

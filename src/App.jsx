@@ -8,15 +8,19 @@ import Error from './Error/Error-Not-Found';
 import ContactUs from './Contact-Us/ContactUs';
 import UserSignUp from './UserSignUp/UserSignUp';
 import Navbar from './Components/Navbar';
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
+import AboutUs from './AboutUs/AboutUs';
+import BrandOnboarding from './BrandOnBoarding/BrandOnBoarding';
 
 function App() {
 	const [url, setUrl] = useState(window.location.pathname);
 
 	const handlePageNavigation = (e) => {
 		e.preventDefault();
-		// alert('event fired');s
-		window.location.href = e.target.getAttribute('href');
-		setUrl(e.target.getAttribute('href'));
+		const href = e.target.getAttribute('href');
+		// alert('event fired ' + href);
+		window.location.href = href;
+		setUrl(href);
 	};
 
 	useEffect(() => {
@@ -47,6 +51,21 @@ function App() {
 				<Route
 					path='/contact-us'
 					element={<ContactUs />}
+				/>
+
+				<Route
+					path='/privacy-policy'
+					element={<PrivacyPolicy />}
+				/>
+
+				<Route
+					path='/about-us'
+					element={<AboutUs />}
+				/>
+
+				<Route
+					path='/brand-onboarding'
+					element={<BrandOnboarding />}
 				/>
 
 				<Route

@@ -10,14 +10,16 @@ function TopText() {
 				<h2>Hit us up at</h2>
 				<h2>+91 9305709846</h2>
 				<h2>STALK US AT</h2>
-				<img
-					src='/svgs/linkedin-g.svg'
-					alt=''
-				/>
-				<img
-					src='/svgs/instagram.svg'
-					alt=''
-				/>
+				<div className='links'>
+					<a
+						className='linkedin'
+						href='https://www.linkedin.com/company/getkandidd/posts/?feedView=all'
+					></a>
+					<a
+						className='insta'
+						href='https://www.instagram.com/kandid.me/'
+					></a>
+				</div>
 			</div>
 		</div>
 	);

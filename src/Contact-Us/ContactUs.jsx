@@ -3,7 +3,7 @@ import NavBar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 function ContactUs() {
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const name = e.target.name.value;
 		const email = e.target.email.value;
@@ -17,23 +17,36 @@ function ContactUs() {
 			message: message,
 		};
 
+		await fetch('http://localhost:8080/forms/contact-us/save', {
+			body: JSON.stringify(data),
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+			.then((res) => {
+				console.log('respnse : ', res);
+			})
+			.then((data) => {
+				console.log('data : ', data);
+			})
+			.catch((err) => {
+				console.log('error : ', err);
+			});
 		console.log(data);
 	};
 
 	return (
 		<>
+			<TopText />
 			<div className='contact-us'>
-				<TopText />
 				{/* <NavBar /> */}
 				<h1>Slide Into Our DMs</h1>
 				<h4>
 					Whether you’re an early access user, a founder, a brand wanting to
-					<br />
 					collab, an investor, someone who wants to contribute to our team or
-					<br />
 					even a hater or stalker don’t be shy, Hit us up, we love hearing from
-					<br />
-					<span>EVERYONE!</span>
+					EVERYONE!
 				</h4>
 				<form onSubmit={handleSubmit}>
 					<h2>Contact Us</h2>
