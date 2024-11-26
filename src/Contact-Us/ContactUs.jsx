@@ -17,7 +17,7 @@ function ContactUs() {
 			message: message,
 		};
 
-		await fetch('http://localhost:8080/forms/contact-us/save', {
+		await fetch('http://152.42.156.30:8080/forms/contact-us/save', {
 			body: JSON.stringify(data),
 			method: 'POST',
 			headers: {

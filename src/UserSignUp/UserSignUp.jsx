@@ -26,7 +26,7 @@ function UserSignUp() {
 			message: message,
 		};
 
-		await fetch('http://localhost:8080/forms/user-signup/save', {
+		await fetch('http://152.42.156.30:8080/forms/user-signup/save', {
 			body: JSON.stringify(data),
 			method: 'POST',
 			headers: {
@@ -43,6 +43,8 @@ function UserSignUp() {
 				console.log('error : ', err);
 			});
 		console.log(data);
+		alert('Your response has been recorded');
+		window.location.reload();
 	};
 
 	return (
