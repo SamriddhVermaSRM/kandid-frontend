@@ -7,7 +7,7 @@ import Home from './Home/Home';
 import Error from './Error/Error-Not-Found';
 import ContactUs from './Contact-Us/ContactUs';
 import UserSignUp from './UserSignUp/UserSignUp';
-import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
 import AboutUs from './AboutUs/AboutUs';
 import BrandOnboarding from './BrandOnBoarding/BrandOnBoarding';

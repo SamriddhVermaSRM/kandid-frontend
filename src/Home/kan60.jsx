@@ -1,4 +1,10 @@
 function AppUiKan60() {
+	window.addEventListener('resize', () => {
+		const w = window.innerWidth;
+		document.querySelectorAll('.lp-app-ui').forEach((el) => {
+			el.style.scale = w < 800 ? w / 1000 : 1;
+		});
+	});
 	return (
 		<>
 			<div className='lp-app-ui'>

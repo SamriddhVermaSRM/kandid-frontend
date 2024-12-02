@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
-import Footer from '../Components/Footer';
-import Navbar from '../Components/Navbar';
-import TopText from '../Components/TopText';
+import Footer from '../Components/Footer/Footer';
+import Navbar from '../Components/Navbar/Navbar';
+import TopText from '../Components/TopBars/TopText';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 

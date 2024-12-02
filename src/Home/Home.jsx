@@ -1,8 +1,7 @@
-import ScrollText from '../Components/ScrollText';
-import Footer from '../Components/Footer';
+import ScrollText from '../Components/TopBars/ScrollText';
+import Footer from '../Components/Footer/Footer';
 import AppUiKan60 from './kan60';
 import AppUiKanTry from './kanTry';
-import { motion } from 'framer-motion';
 
 function Home() {
 	return (

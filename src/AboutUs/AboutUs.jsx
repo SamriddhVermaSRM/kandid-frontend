@@ -1,5 +1,5 @@
-import Footer from '../Components/Footer';
-import TopText from '../Components/TopText';
+import Footer from '../Components/Footer/Footer';
+import TopText from '../Components/TopBars/TopText';
 
 function AboutUs() {
 	return (
