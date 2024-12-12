@@ -10,6 +10,8 @@ import Signup from './Pages/Signup/Signup.page';
 import BrandOnboarding from './Pages/BrandOnboarding/BrandOnboarding.page';
 import ContactUs from './Pages/ContactUs/ContactUs.page';
 import Footer from './Components/Footer/Footer.component';
+import AboutUs from './Pages/AboutUs/AboutUs.page';
+import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy.page';
 
 function App() {
 	const loc = window.location.pathname;
@@ -37,6 +39,14 @@ function App() {
 						<Route
 							path='/contact-us'
 							element={<ContactUs />}
+						/>
+						<Route
+							path='/about-us'
+							element={<AboutUs />}
+						/>
+						<Route
+							path='/privacy-policy'
+							element={<PrivacyPolicy />}
 						/>
 					</Routes>
 				</Router>
