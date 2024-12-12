@@ -1,0 +1,132 @@
+.contact-us {
+	padding-top: calc(var(--navbar-height) + var(--scrolling-text-height) + 70px);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	& h1 {
+		font-family: 'Volkhov';
+		font-size: clamp(20px, 7vw, 40px);
+		color: #333;
+		margin: 0;
+	}
+
+	& h4 {
+		font-family: 'Poppins';
+		width: 70%;
+		font-weight: 400;
+		font-size: clamp(15px, 3vw, 20px);
+		color: #333;
+		margin: 0;
+		margin-top: 5px;
+		text-align: center;
+	}
+
+	& form {
+		margin: 5vw;
+		margin-top: 20px;
+		width: 70%;
+		max-width: 500px;
+		padding: 40px;
+		padding-top: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #fff700bc;
+		font-family: 'Poppins';
+		border-radius: 50px;
+	}
+
+	& h2 {
+		font-size: 40px;
+		margin: 0;
+		margin: 10px;
+		font-weight: 600;
+	}
+
+	& form label {
+		align-self: flex-start;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	& form input,
+	& form textarea {
+		width: 105%;
+		/* max-width: 400px; */
+		height: 40px;
+		margin: 4px;
+		margin-bottom: 16px;
+		padding: 10px;
+		border-radius: 8px;
+		border: 0;
+		font-family: 'Poppins';
+		font-size: 16px;
+	}
+
+	& form input:focus {
+		outline: 0;
+		border: 1.5px solid #333;
+	}
+
+	& form .student {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	& form .student div label {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	& form .student div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+	}
+
+	& form .student input {
+		appearance: none;
+		background: white;
+		outline: 1.5px solid black;
+		border-radius: 50%;
+		margin: 0;
+		padding: 0;
+		height: 18px;
+		width: unset;
+		aspect-ratio: 1;
+	}
+
+	& form .student input:checked {
+		border: 4px solid rgb(255, 255, 255);
+		outline: 2px solid rgb(0, 0, 0);
+		appearance: none;
+		background: #000000;
+	}
+
+	& form textarea {
+		height: 120px;
+	}
+
+	& form button {
+		cursor: pointer;
+
+		width: 200px;
+		height: 50px;
+		margin: 10px;
+		margin-top: 20px;
+		border-radius: 25px;
+		font-family: 'Poppins';
+		font-size: 20px;
+		color: #fff;
+		background: #333;
+		border: none;
+	}
+}

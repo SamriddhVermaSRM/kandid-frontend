@@ -1,0 +1,474 @@
+main.brand-onboarding {
+	display: grid;
+	grid-template-rows: var(--page) var(--page);
+}
+
+@media (width < 810px) {
+	main.brand-onboarding {
+		grid-template-rows: 100vw;
+	}
+}
+
+.brand-onboarding {
+	padding-top: calc(var(--navbar-height) + var(--scrolling-text-height) + 70px);
+
+	& .carousel {
+		display: flex;
+		position: relative;
+		height: calc(
+			100vh - var(--navbar-height) - var(--scrolling-text-height) - 70px
+		);
+
+		overflow: hidden;
+	}
+
+	& .carousel .bg {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		opacity: 0.8;
+		animation: scroll-img 50s linear infinite;
+
+		& img {
+			margin: 0 1vw;
+			height: 100vh;
+			min-width: 400px;
+			max-width: 400px;
+			border-radius: 30px;
+			max-height: 70vh;
+			object-fit: cover;
+		}
+	}
+
+	& .carousel .content {
+		position: absolute;
+		inset: 0;
+
+		& .planets {
+			scale: 0.85;
+			top: auto;
+			bottom: auto;
+			left: 13%;
+			width: 80vw;
+			max-width: 700px;
+			aspect-ratio: 1;
+			position: absolute;
+		}
+
+		& .planets div {
+			opacity: 0.95;
+			aspect-ratio: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			background: #fff500;
+			font-family: 'Poppins';
+			font-weight: 600;
+			font-size: clamp(12px, 2.5vw, 35px);
+			padding: 30px;
+			border-radius: 50%;
+			text-align: center;
+		}
+
+		& .circle-1 {
+			top: 0%;
+			left: 23%;
+		}
+		& .circle-2 {
+			top: 36%;
+			left: 0%;
+		}
+		& .circle-3 {
+			top: 47%;
+			left: 36%;
+		}
+		& .circle-4 {
+			top: 18%;
+			left: 67%;
+		}
+	}
+
+	& .about-kandid {
+		margin: 20px;
+		padding: clamp(30px, 5vw, 40px);
+		border-radius: 30px;
+		background: linear-gradient(134deg, #303030 60%, #969696 100%);
+		height: calc(100vh - var(--navbar-height) - 80px);
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+
+		& .content {
+			font-family: 'Poppins';
+			color: #fff;
+			width: 50%;
+			& h1 {
+				font-size: clamp(55px, 7vw, 70px);
+				margin-bottom: 10px;
+				margin-top: 0;
+			}
+
+			& h2 {
+				font-size: clamp(25px, 3vw, 30px);
+			}
+		}
+
+		& .pics {
+			width: 50%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+
+			& img {
+				width: 30%;
+				border-radius: 20px;
+			}
+
+			& img:nth-child(1) {
+				align-self: flex-end;
+			}
+
+			& img:nth-child(3) {
+				align-self: flex-start;
+			}
+		}
+	}
+
+	& .partner-with-us {
+		font-family: 'Poppins';
+		margin: 20px;
+		padding: 20px;
+		padding-top: 0;
+		border-radius: 30px;
+		background: #fcff5e;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& h1 {
+			font-size: clamp(22px, 4.2vw, 100px);
+			margin: 14px;
+		}
+		& .text {
+			gap: 11px;
+			margin-bottom: 12px;
+			border-radius: 10px;
+			width: 95%;
+			display: flex;
+			flex-direction: column;
+			transition: all 0.2s ease-in-out;
+
+			& h2,
+			h3 {
+				cursor: pointer;
+				background: white;
+				margin: 0;
+				height: fit-content;
+				position: relative;
+				z-index: 1;
+				font-size: 33px;
+				font-weight: 600;
+			}
+
+			& h2 {
+				transition: all 0.2s ease-in-out;
+				font-size: clamp(20px, 3vw, 28px);
+				border-radius: 10px;
+				padding: 8px 14px;
+				position: relative;
+				z-index: 2;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				& .arrow {
+					min-height: 38px;
+					rotate: 0;
+					min-width: 38px;
+					background: url('/svg/arrow.svg');
+					background-size: contain;
+					transition: all 0.2s ease-in-out;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+				& .arrow.active {
+					rotate: 90deg;
+				}
+			}
+
+			& h2:hover {
+				background: #feffdf;
+			}
+
+			& h3 {
+				/* transition: all 0.2s ease-in-out; */
+				font-weight: 500;
+				font-size: 22px;
+				overflow: hidden;
+
+				& div {
+					padding: 10px 15px;
+				}
+			}
+		}
+	}
+
+	& .apply-now {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #fff500;
+
+		& h1 {
+			margin: 10px;
+			margin-bottom: 0;
+			font-family: 'Poppins';
+			font-size: 30px;
+			font-weight: 400;
+			color: #000000;
+			text-decoration: underline #000000;
+		}
+
+		& h4,
+		h1 {
+			text-align: center;
+			margin: 10px;
+			font-family: 'Volkhov';
+			font-weight: 400;
+			font-size: clamp(24px, 6vw, 28px);
+			color: #000000;
+		}
+	}
+
+	& .what-it-takes {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'Poppins';
+		gap: 40px;
+
+		& h2,
+		h3,
+		h4,
+		h5 {
+			margin: 0;
+		}
+
+		& .text {
+			flex: 1;
+			max-width: 490px;
+			margin-right: 10px;
+			font-weight: 400;
+			padding: 6vw;
+
+			& h2 {
+				font-size: 30px;
+				margin-bottom: 20px;
+			}
+
+			& h3 {
+				font-size: 20px;
+				font-weight: 400;
+			}
+		}
+
+		& .posts-container {
+			display: flex;
+			align-items: center;
+		}
+
+		& .posts {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+
+			& .post {
+				background: #fff500;
+			}
+
+			& div {
+				max-width: 420px;
+				background: #fdff62;
+				margin: 15px;
+				padding: 22px;
+				width: calc(100% - 30px);
+				max-width: 320px;
+				height: 35vh;
+				display: flex;
+				flex-direction: column;
+				border-radius: 18px;
+				justify-content: center;
+				gap: 6px;
+
+				& h4 {
+					font-size: clamp(20px, 3vw, 26px);
+				}
+
+				& h5 {
+					font-weight: 500;
+					font-size: clamp(15px, 2vw, 17px);
+				}
+			}
+		}
+	}
+
+	& .process {
+		font-family: 'Poppins';
+		& h1 {
+			background: #fff500;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: clamp(30px, 7vw, 42px);
+			padding: 30px 0;
+			text-align: center;
+		}
+		& h2 {
+			margin: 5vw;
+			margin-top: 12px;
+			font-size: clamp(20px, 3vw, 30px);
+			font-weight: 500;
+			padding: 5vw 7vw;
+			border-radius: 50px;
+			background: #fff500;
+			display: flex;
+			flex-direction: column;
+
+			& a {
+				outline: 0;
+				border: 0;
+				appearance: none;
+				margin-top: 35px;
+				height: 45px;
+				width: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: 'Poppins';
+				font-weight: 500;
+				font-size: 14px;
+				color: #333;
+				text-decoration: none;
+				border-radius: 9px;
+				background-color: #f8f8f8;
+				transition: all 0.2s ease;
+			}
+
+			& a:hover {
+				/* outline: 0.5px solid black; */
+				box-shadow: 4px 4px 10px 0px #0000003e;
+				background-color: rgba(255, 250, 100, 0.878);
+			}
+		}
+
+		& .pro-nav {
+			display: flex;
+			flex-direction: column;
+		}
+
+		& .nav-bar {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			transition: background 50ms cubic-bezier(0.5, 0.25, 0.5, 0.75);
+		}
+
+		& .nav-bar ul {
+			display: flex;
+			flex-direction: row;
+			list-style: none;
+			padding: 0%;
+		}
+
+		& .nav-bar ul li {
+			margin: 0 10px;
+		}
+
+		& .nav-bar ul li div {
+			cursor: pointer;
+			height: 45px;
+			width: clamp(170px, 20vw, 200px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: 'Poppins';
+			font-weight: 500;
+			color: #333;
+			text-decoration: none;
+			border-radius: 9px;
+			background-color: #f8f8f8;
+			transition: all 0.2s ease;
+		}
+
+		& .nav-bar ul li div:hover {
+			box-shadow: 4px 4px 10px 0px #00000011;
+			background-color: rgba(255, 250, 100, 0.878);
+		}
+
+		& .nav-bar ul li div.focused {
+			box-shadow: 4px 4px 10px 0px #00000020;
+			background-color: #fff500;
+		}
+
+		.not-focused {
+			background-color: #d7d7d7;
+		}
+	}
+}
+
+@media (width < 810px) {
+	/* .brand-onboarding .process .pro-nav {
+		flex-direction: row;
+	} */
+	.brand-onboarding .process .nav-bar ul {
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+		gap: 10px;
+
+		& li div {
+			width: 100%;
+		}
+	}
+	.brand-onboarding .what-it-takes {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.brand-onboarding .what-it-takes .posts {
+		width: 100%;
+		& div {
+			height: unset;
+		}
+	}
+	.brand-onboarding .what-it-takes .posts-container {
+		/* height: unset; */
+		flex-direction: column;
+	}
+
+	.brand-onboarding .about-kandid {
+		flex-direction: column;
+	}
+	.brand-onboarding .about-kandid .content {
+		width: 100%;
+	}
+
+	.brand-onboarding .about-kandid .pics {
+		width: 100%;
+		aspect-ratio: 1;
+	}
+}
+
+@keyframes scroll-img {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(calc((-400px - 2vw) * 6));
+	}
+}
