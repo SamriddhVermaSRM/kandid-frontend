@@ -1,0 +1,79 @@
+.topbar {
+	grid-row: topbar;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+
+	justify-content: space-between;
+	font-family: 'Poppins';
+	flex-direction: row;
+	box-shadow: 0 0 10px 0px #00000022;
+	background-color: #fff500;
+}
+
+.topbar .marquee {
+	height: inherit;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	animation: scroll-text 15s linear infinite;
+}
+
+@keyframes scroll-text {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+.topbar .marquee p {
+	height: inherit;
+	margin: 0;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-weight: 400;
+	color: #333;
+	white-space: nowrap;
+}
+
+.topbar .left,
+.topbar .right {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.topbar .left {
+	justify-content: flex-start;
+}
+
+.topbar img {
+	height: 100%;
+}
+
+.topbar .right {
+	justify-content: flex-end;
+}
+
+.topbar .right {
+	font-size: 18px;
+	font-weight: 700;
+	gap: 15px;
+}
+
+.topbar .right .links {
+	display: flex;
+	height: 100%;
+	gap: 10px;
+}
+
+@media (width < 608px) {
+	.topbar .right .text {
+		display: none;
+	}
+}

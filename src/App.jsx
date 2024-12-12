@@ -1,79 +1,49 @@
+import { NavBarContext } from './Components/NavBar/NavBar.context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import './styles.css';
+import NavBar from './Components/NavBar/NavBar.component';
+import TopBar from './Components/TopBar/TopBar.component';
 
-import Home from './Home/Home';
-import Error from './Error/Error-Not-Found';
-import ContactUs from './Contact-Us/ContactUs';
-import UserSignUp from './UserSignUp/UserSignUp';
-import Navbar from './Components/Navbar/Navbar';
-import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy';
-import AboutUs from './AboutUs/AboutUs';
-import BrandOnboarding from './BrandOnBoarding/BrandOnBoarding';
+import Home from './Pages/Home/Home.page';
+import Signup from './Pages/Signup/Signup.page';
+import BrandOnboarding from './Pages/BrandOnboarding/BrandOnboarding.page';
+import ContactUs from './Pages/ContactUs/ContactUs.page';
+import Footer from './Components/Footer/Footer.component';
 
 function App() {
-	const [url, setUrl] = useState(window.location.pathname);
-
-	const handlePageNavigation = (e) => {
-		e.preventDefault();
-		const href = e.target.getAttribute('href');
-		// alert('event fired ' + href);
-		window.location.href = href;
-		setUrl(href);
-	};
-
-	useEffect(() => {
-		document.querySelectorAll('a').forEach((a) => {
-			a.addEventListener('click', handlePageNavigation);
-		});
-		return () => {
-			document
-				.querySelector('a')
-				.removeEventListener('click', handlePageNavigation);
-		};
-	}, []);
+	const loc = window.location.pathname;
+	console.log(loc);
 
 	return (
 		<>
-			<Navbar url={url} />
-			<Routes>
-				<Route
-					path='/'
-					element={<Home />}
-				/>
-
-				<Route
-					path='/sign-up'
-					element={<UserSignUp />}
-				/>
-
-				<Route
-					path='/contact-us'
-					element={<ContactUs />}
-				/>
-
-				<Route
-					path='/privacy-policy'
-					element={<PrivacyPolicy />}
-				/>
-
-				<Route
-					path='/about-us'
-					element={<AboutUs />}
-				/>
-
-				<Route
-					path='/brand-onboarding'
-					element={<BrandOnboarding />}
-				/>
-
-				<Route
-					path='*'
-					element={<Error />}
-				/>
-			</Routes>
+			<NavBarContext.Provider value={loc}>
+				<TopBar />
+				<NavBar />
+				<Router>
+					<Routes>
+						<Route
+							path='/'
+							element={<Home />}
+						/>
+						<Route
+							path='/signup'
+							element={<Signup />}
+						/>
+						<Route
+							path='/onboarding'
+							element={<BrandOnboarding />}
+						/>
+						<Route
+							path='/contact-us'
+							element={<ContactUs />}
+						/>
+					</Routes>
+				</Router>
+				<Footer />
+			</NavBarContext.Provider>
 		</>
 	);
 }
+
 export default App;

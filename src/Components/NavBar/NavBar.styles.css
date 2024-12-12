@@ -1,0 +1,148 @@
+nav.navbar {
+	grid-row: navbar;
+	position: sticky;
+	z-index: 999;
+	top: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 10px 0px #00000022;
+	background: white;
+}
+
+nav.navbar ul {
+	width: 70%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+}
+
+nav.navbar ul a {
+	position: relative;
+	z-index: 2;
+	height: 50px;
+	width: clamp(180px, 13vw, 200px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Poppins';
+	font-weight: 500;
+	color: #333;
+	text-decoration: none;
+	border-radius: 9px;
+	background-color: #f8f8f8;
+	transition: all 0.2s ease;
+}
+
+.navbar ul a:hover {
+	box-shadow: 4px 4px 10px 0px #00000011;
+	background-color: rgba(255, 250, 100, 0.878);
+}
+
+.navbar ul a.active {
+	box-shadow: 4px 4px 10px 0px #00000020;
+	background-color: #fff500;
+}
+
+nav.mobile {
+	display: none;
+	position: sticky;
+	margin-top: 10px;
+	top: 10px;
+	height: 60px;
+	width: 60px;
+	z-index: 999;
+	background: #fff96c;
+	border-radius: 0 20px 20px 0;
+	overflow: hidden;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	transition: all 300ms ease-in-out;
+}
+
+nav.mobile #hm-menu {
+	display: flex;
+	margin: 5px;
+	align-self: flex-end;
+
+	padding: 0;
+	transition: all 300ms ease-in-out;
+	background: url('/svg/hm-menu.svg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 50px;
+	min-width: 50px;
+}
+nav.mobile.expanded #hm-menu {
+	background: url('/svg/hm-menu-close.svg') center no-repeat;
+	background-size: cover;
+	scale: 0.9;
+}
+
+nav.mobile.expanded {
+	border-radius: 0 20px 0 0;
+	height: calc(100vh - 10px);
+	width: 250px;
+}
+
+nav.mobile aside {
+	width: 0;
+	height: 80vh;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	transition: all 300ms ease-in-out;
+}
+
+nav.expanded aside {
+	width: 100%;
+	/* height: 100%; */
+}
+
+#hm-menu-label {
+	position: fixed;
+	z-index: 900;
+	inset: auto;
+	cursor: grab;
+}
+
+nav.expanded ~ #hm-menu-label {
+	inset: 0;
+}
+
+nav.mobile aside ul {
+	position: relative;
+	z-index: 999;
+
+	padding: 20px;
+	width: unset;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 15px;
+	height: 100%;
+}
+
+@media (width < 900px) {
+	nav.navbar {
+		display: none;
+	}
+	nav.mobile {
+		display: flex;
+	}
+}
+
+/* #nav-active {
+	position: absolute;
+	transition: all 300ms ease-in-out;
+	z-index: 1;
+	background-color: rgb(209, 42, 179);
+} */
